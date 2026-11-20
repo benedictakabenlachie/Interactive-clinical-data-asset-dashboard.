@@ -2,7 +2,7 @@
 
 Python analysis of a virus biobank catalogue and its customer orders. `prat_dashboard.py` cleans the raw Excel data, links orders to the catalogue, computes 18 KPIs and generates a one-page dashboard plus 16 individual charts.
 
-![Dashboard](outputs/dashboard.png)
+![Dashboard](Data%20and%20Outputs/dashboard.png)
 
 ## Datasets
 
@@ -15,12 +15,12 @@ Python analysis of a virus biobank catalogue and its customer orders. `prat_dash
 
 ```bash
 pip install pandas openpyxl matplotlib seaborn
-python scripts/prat_dashboard.py data/Exercice_PRAT_Orders.xlsx data/Exercice_PRAT_Products.xlsx outputs
+python scripts/prat_dashboard.py "Data and Outputs/Exercice_PRAT_Orders.xlsx" "Data and Outputs/Exercice_PRAT_Products.xlsx" "Data and Outputs"
 ```
 
-Arguments are optional and positional: orders file, products file, output folder. Defaults are the two file names above in the current directory, and the current directory for output. The command above writes everything into `outputs/`.
+Arguments are optional and positional: orders file, products file, output folder. Defaults are the two file names above in the current directory, and the current directory for output. The command above reads the data from, and writes the results to, the `Data and Outputs/` folder.
 
-**Outputs (in `outputs/`):** `dashboard.png`, `kpis.csv` and `charts/*.png`. KPIs are also printed to the console.
+**Outputs (in `Data and Outputs/`):** `dashboard.png`, `kpis.csv` and `charts/*.png`. KPIs are also printed to the console.
 
 ## What the script does
 
@@ -34,7 +34,7 @@ Arguments are optional and positional: orders file, products file, output folder
 3. **Compute KPIs** and save them to `kpis.csv`.
 4. **Plot** 16 charts individually (`charts/`) and assemble them into the dashboard.
 
-## KPIs (`outputs/kpis.csv`)
+## KPIs (`Data and Outputs/kpis.csv`)
 
 | KPI | Value |
 |---|---|
@@ -64,7 +64,7 @@ The file also includes average units per order and an estimated count of distinc
 - **Customers:** Germany, France and the USA lead. Universities and public research organisations place 74% of orders; SMEs pay the most per order.
 - **Logistics:** dry ice is the most common shipping condition among ordered products.
 
-## Charts (`outputs/charts/`)
+## Charts (`Data and Outputs/charts/`)
 
 | File | Chart |
 |---|---|
@@ -91,10 +91,9 @@ The file also includes average units per order and an estimated count of distinc
 .
 ├── scripts/
 │   └── prat_dashboard.py
-├── data/
+├── Data and Outputs/
 │   ├── Exercice_PRAT_Orders.xlsx
-│   └── Exercice_PRAT_Products.xlsx
-├── outputs/
+│   ├── Exercice_PRAT_Products.xlsx
 │   ├── dashboard.png
 │   ├── kpis.csv
 │   └── charts/
